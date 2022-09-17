@@ -26,6 +26,9 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Column(name = "image", nullable = true, length = 64)
+    private String image;
+
     @Column(name="role", nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -37,17 +40,25 @@ public class User {
     public User() {
     }
 
-    public User (String name, String email, String password, Role role){
+    public User (String name, String email, String password, String image, Role role){
         this.name = name;
         this.email = email;
         this.password =  password;
+        this.image = image;
         this.role = role;
     }
 
     @Override
     public String toString() {
-        return String.format("User: id=%s | name=%s | email=%s | password=%s | role=%s", id, name, email, password,
-                role);
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", image='" + image + '\'' +
+                ", role=" + role +
+                ", posts=" + posts +
+                '}';
     }
 
     public String getName() {
@@ -72,6 +83,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Role getRole() {
