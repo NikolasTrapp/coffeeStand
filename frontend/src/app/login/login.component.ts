@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+      fetch("http://localhost:5000/listCustomers").then((response)=> console.log(response.json()));
   }
 
 }

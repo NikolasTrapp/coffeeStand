@@ -1,12 +1,24 @@
-<div class="p-grid p-justify-center">
-    <div class="p-col-10 p-sm-6 p-md-4">
-        <p-card>
-            <div class="p-grid">
-                <div class="p-col-12">
-                    <label for="name">Name: </label>
-                    <input type="text" name="name">
-                </div>
-            </div>
-        </p-card>
-    </div>
+<div>
+    <form action="http://localhost:4200/" method="get">
+        <h1>Login</h1>
+        <!-- Name input -->
+        <div>
+            <label class="form-label" for="name">Name: </label>
+            <input type="text" id="name"/>
+        </div>  
+        <!-- Email input -->
+        <div>
+            <label class="form-label" for="email">Email: </label>
+            <input type="email" id="email"/>
+        </div>
+
+        <!-- Password input -->
+        <div>
+            <label class="form-label" for="password">Password: </label>
+            <input type="password" id="password"/>
+        </div>
+
+        <!-- Submit button -->
+        <button id="submit-button" type="submit">Login</button>
+    </form>
 </div>
